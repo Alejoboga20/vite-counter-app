@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const newMessage = {
 	message: "I'm an object",
 	title: 'True',
 };
 
-export const FirstApp = ({ title = 'Default Title Prop', subtitle = '' }) => {
+export const FirstApp = ({ title, subtitle = '' }) => {
 	return (
 		<>
 			<h1>{title}</h1>
@@ -13,4 +14,9 @@ export const FirstApp = ({ title = 'Default Title Prop', subtitle = '' }) => {
 			<p>Learning React: {JSON.stringify(newMessage, null, 4)}</p>
 		</>
 	);
+};
+
+FirstApp.propTypes = {
+	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 };
