@@ -1,5 +1,6 @@
-import { FirstApp } from './FirstApp';
+import { CounterApp } from './CounterApp';
+//import { FirstApp } from './FirstApp';
 
 export const App = () => {
-	return <FirstApp title='First App' />;
+	return <CounterApp value={0} />;
 };
