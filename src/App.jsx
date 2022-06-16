@@ -1,5 +1,5 @@
 import { FirstApp } from './FirstApp';
 
 export const App = () => {
-	return <FirstApp title='First App' subtitle='Props' />;
+	return <FirstApp title='First App' />;
 };
