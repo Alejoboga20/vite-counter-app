@@ -9,7 +9,7 @@ const newMessage = {
 export const FirstApp = ({ title, subtitle }) => {
 	return (
 		<>
-			<h1>{title}</h1>
+			<h1 data-testid='test-title'>{title}</h1>
 			<h2>{subtitle}</h2>
 			<p>Learning React: {JSON.stringify(newMessage, null, 4)}</p>
 		</>

@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import { FirstApp } from '../src/FirstApp';
 
 const title = 'Test Title';
+const subtitle = 'Test Subtitle';
 
 describe('Test First App', () => {
 	/* 	test('should match snapshot', () => {
@@ -10,7 +11,14 @@ describe('Test First App', () => {
 	}); */
 
 	test('should show title in h1', () => {
-		const { getByText } = render(<FirstApp title={title} />);
+		const { getByText, getByTestId } = render(<FirstApp title={title} />);
+
 		expect(getByText(title)).toBeTruthy();
+		expect(getByTestId('test-title').innerHTML).toBe(title);
+	});
+
+	test('should show subtitle from props', () => {
+		const { getByText } = render(<FirstApp title={title} subtitle={subtitle} />);
+		expect(getByText(subtitle)).toBeTruthy();
 	});
 });
